@@ -4,6 +4,14 @@ Object.freeze(assert);
 const sumOfOther = require('./src/sumOfOther');
 const make = require('./src/make');
 
+function sum(a, b) {
+  return a + b;
+}
+
+function sub(a, b) {
+  return a - b;
+}
+
 describe('Should return array of sums of other values then current', () => {
   it('sumOfOther 1', () => {
     const arrayTest = sumOfOther([0, 5, 10]);
@@ -39,6 +47,6 @@ describe('make', () => {
 
   it('make 2 (substitution)', () => {
     const result = make(15)(5)(1)(sub);
-    assert.deepEqual(result, 1);
+    assert.deepEqual(result, 9);
   });
 });
